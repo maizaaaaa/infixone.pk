@@ -1,0 +1,132 @@
+{
+  "games": [
+    [
+      "Fortnite",
+      "Battle Royale",
+      "V-Bucks, Stacked Accounts",
+      280
+    ],
+    [
+      "PUBG Mobile",
+      "Battle Royale",
+      "UC, Mythic Accounts",
+      220
+    ],
+    [
+      "Call of Duty",
+      "Battle Royale",
+      "CP, Warzone Accounts",
+      450
+    ],
+    [
+      "Apex Legends",
+      "Battle Royale",
+      "Apex Coins, Master/Predator Accounts",
+      450
+    ],
+    [
+      "Free Fire",
+      "Battle Royale",
+      "Diamonds, Rare Accounts",
+      180
+    ],
+    [
+      "Valorant",
+      "Tactical & Strategy",
+      "VP, Ranked Accounts",
+      350
+    ],
+    [
+      "League of Legends",
+      "Tactical & Strategy",
+      "RP, Smurf/Main Accounts",
+      300
+    ],
+    [
+      "Clash Royale",
+      "Tactical & Strategy",
+      "Gems, Maxed Accounts",
+      150
+    ],
+    [
+      "Brawl Stars",
+      "Tactical & Strategy",
+      "Gems, Stacked Accounts",
+      180
+    ],
+    [
+      "Genshin Impact",
+      "RPG & Open World",
+      "Genesis Crystals, Primogems, Accounts",
+      280
+    ],
+    [
+      "Wuthering Waves",
+      "RPG & Open World",
+      "Astrite, Starter/Endgame Accounts",
+      300
+    ],
+    [
+      "Neverness to Everness",
+      "RPG & Open World",
+      "In-game Currency, Pre-orders/Accounts",
+      300
+    ],
+    [
+      "GTA V Online",
+      "RPG & Open World",
+      "Cash Boosts, Modded Accounts",
+      500
+    ],
+    [
+      "Minecraft",
+      "Sandbox & Platform",
+      "Premium Java/Bedrock Accounts",
+      1800
+    ],
+    [
+      "Roblox",
+      "Sandbox & Platform",
+      "Robux, Stacked Accounts",
+      200
+    ],
+    [
+      "Discord Nitro",
+      "Media & Utility",
+      "Nitro Subscriptions, Server Boosts",
+      450
+    ],
+    [
+      "Crunchyroll",
+      "Media & Utility",
+      "Premium Subscriptions",
+      600
+    ],
+    [
+      "Marvel Rivals",
+      "Media & Utility",
+      "Units, Beta/Early Accounts",
+      350
+    ]
+  ],
+  "images": {
+    "Fortnite": "https://cdn2.unrealengine.com/en-fn-og-42-10-c1sx-egs-launcher-blade-2560x1440-2560x1440-319ff81b274e.jpg",
+    "PUBG Mobile": "https://www.independentarabia.com/sites/default/files/thumbnails/image/2020/06/07/208186-2056759375.jpg",
+    "Call of Duty": "https://vigiato.net/wp-content/uploads/2023/08/modern-warfare-3-mw2-dlc.jpg",
+    "Apex Legends": "https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg",
+    "Free Fire": "https://telegrafi.com/media-library/2022-02-garena-free-fire-jpg.jpg?coordinates=150%2C0%2C150%2C0&height=1500&id=57961205&width=2000",
+    "Valorant": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/8f0df8efd5b986039cd37a4d5f3bf31b815d0c54-3840x2160.jpg",
+    "League of Legends": "https://ruined.dev/_next/image?q=75&url=https%3A%2F%2Fruined.dev%2Fwp-content%2Fuploads%2F2021%2F05%2Fteam_graves_2-rcm1024x0u.jpg&w=1200",
+    "Clash Royale": "https://cdn.mobygames.com/promos/2601358-clash-royale-other.jpg",
+    "Brawl Stars": "https://www.klicksafe.eu/fileadmin/_processed_/9/9/csm_Sharepic_Brawl-Stars_905ff3013c.png",
+    "Genshin Impact": "https://www.teyvatavern.com/cdn/shop/collections/genshin-impact-official-merch-945659.jpg?v=1739288877",
+    "Wuthering Waves": "https://cdn1.epicgames.com/spt-assets/c1586295960b46f88bbfeec32c199e0e/wuthering-waves-uw6vy.jpg",
+    "Neverness to Everness": "https://cdn1.epicgames.com/offer/3e9b6c9f0a7b4e9c8a4a4b8f2b8b7c1d/EGS_NevernesstoEverness_HottaStudio_S1_2560x1440-0b1b7e1a8d0e4b9e9a6d0a4f3e2c1b0a",
+    "GTA V Online": "https://p2.bahamut.com.tw/B/2KU/64/911515c004fa2a8d72009cee861fl845.JPG?v=1647400010929",
+    "Minecraft": "https://ethlan.fr/img/jeux/121.jpg",
+    "Roblox": "https://store-images.s-microsoft.com/image/apps.47252.13510798883386282.a1e5df65-8dd7-427c-9da9-506afa37b254.f4132380-deee-4518-8bbd-2a9b540046f3",
+    "Discord Nitro": "https://img.tamindir.com/2023/11/253503/discord-nitro.jpg",
+    "Crunchyroll": "https://i.blogs.es/2c137a/sin-titulo-2/840_560.jpeg",
+    "Marvel Rivals": "https://www.amd.com/en/gaming/featured-games/marvel-rivals.html"
+  }
+}
