@@ -236,9 +236,9 @@ h1{font-size:clamp(34px,5vw,58px);letter-spacing:-2.8px;line-height:1}
 </header>
 
 <main class="page">
-  <div class="eyebrow">Secure order</div>
-  <h1>Checkout.</h1>
-  <p class="subtitle">Review your selection, enter your details, then complete the payment instructions shown below.</p>
+  <div class="eyebrow">Currency checkout</div>
+  <h1>Currency order.</h1>
+  <p class="subtitle">Confirm your in-game currency package, enter delivery details, and complete payment.</p>
 
   <div id="emptyState" class="panel empty">
     <h2>No product selected</h2>
@@ -283,7 +283,6 @@ h1{font-size:clamp(34px,5vw,58px);letter-spacing:-2.8px;line-height:1}
             <label for="deliveryType">Delivery type</label>
             <select id="deliveryType">
               <option>Digital delivery</option>
-              <option>Account details</option>
             </select>
           </div>
         </div>
@@ -335,26 +334,75 @@ h1{font-size:clamp(34px,5vw,58px);letter-spacing:-2.8px;line-height:1}
 </main>
 
 <script>
-const GAMES = [["Fortnite", "Battle Royale", "V-Bucks, Accounts", 280, "V-Bucks", "https://cdn2.unrealengine.com/en-fn-og-42-10-c1sx-egs-launcher-blade-2560x1440-2560x1440-319ff81b274e.jpg"], ["PUBG Mobile", "Battle Royale", "UC, Accounts", 220, "UC", "https://www.independentarabia.com/sites/default/files/thumbnails/image/2020/06/07/208186-2056759375.jpg"], ["Call of Duty", "Battle Royale", "CP, Accounts", 450, "CP", "https://vigiato.net/wp-content/uploads/2023/08/modern-warfare-3-mw2-dlc.jpg"], ["Apex Legends", "Battle Royale", "Apex Coins, Accounts", 450, "Apex Coins", "https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg"], ["Free Fire", "Battle Royale", "Diamonds, Accounts", 180, "Diamonds", "https://telegrafi.com/media-library/2022-02-garena-free-fire-jpg.jpg?coordinates=150%2C0%2C150%2C0&height=1500&id=57961205&width=2000"], ["Valorant", "Tactical", "VP, Accounts", 350, "VP", "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/8f0df8efd5b986039cd37a4d5f3bf31b815d0c54-3840x2160.jpg"], ["League of Legends", "Tactical", "RP, Accounts", 300, "RP", "https://ruined.dev/_next/image?q=75&url=https%3A%2F%2Fruined.dev%2Fwp-content%2Fuploads%2F2021%2F05%2Fteam_graves_2-rcm1024x0u.jpg&w=1200"], ["Clash Royale", "Tactical", "Gems, Accounts", 150, "Gems", "https://cdn.mobygames.com/promos/2601358-clash-royale-other.jpg"], ["Brawl Stars", "Tactical", "Gems, Accounts", 180, "Gems", "https://www.klicksafe.eu/fileadmin/_processed_/9/9/csm_Sharepic_Brawl-Stars_905ff3013c.png"], ["Genshin Impact", "RPG & Open World", "Primogems, Accounts", 280, "Primogems", "https://www.teyvatavern.com/cdn/shop/collections/genshin-impact-official-merch-945659.jpg?v=1739288877"], ["Wuthering Waves", "RPG & Open World", "Astrite, Accounts", 300, "Astrite", "https://cdn1.epicgames.com/spt-assets/c1586295960b46f88bbfeec32c199e0e/wuthering-waves-uw6vy.jpg"], ["Neverness to Everness", "RPG & Open World", "Currency, Accounts", 300, "Currency", "https://cdn1.epicgames.com/spt-assets/fb7cc56133de4df99b6a95d0a6b35d56/nte-neverness-to-everness-sqyfp.jpg"], ["GTA V Online", "RPG & Open World", "Cash Boosts, Accounts", 500, "Cash Boost", "https://p2.bahamut.com.tw/B/2KU/64/911515c004fa2a8d72009cee861fl845.JPG?v=1647400010929"], ["Minecraft", "Sandbox", "Premium Java/Bedrock", 1800, "Premium Account", "https://ethlan.fr/img/jeux/121.jpg"], ["Roblox", "Sandbox", "Robux, Accounts", 200, "Robux", "https://store-images.s-microsoft.com/image/apps.47252.13510798883386282.a1e5df65-8dd7-427c-9da9-506afa37b254.f4132380-deee-4518-8bbd-2a9b540046f3"], ["Discord Nitro", "Media & Utility", "Subscriptions", 450, "Nitro", "https://img.tamindir.com/2023/11/253503/discord-nitro.jpg"], ["Crunchyroll", "Media & Utility", "Premium", 600, "Premium", "https://i.blogs.es/2c137a/sin-titulo-2/840_560.jpeg"], ["Marvel Rivals", "Media & Utility", "Units, Accounts", 350, "Units", "https://www.amd.com/content/dam/amd/en/images/games/marvel-rivals/3032700-marvel-rivals-screen-blk.jpg"]];
+const GAMES = [
+["Fortnite","Battle Royale","V-Bucks, Accounts, Crew",1200,"V-Bucks","https://cdn2.unrealengine.com/en-fn-og-42-10-c1sx-egs-launcher-blade-2560x1440-2560x1440-319ff81b274e.jpg"],
+["PUBG Mobile","Battle Royale","UC, Accounts",415,"UC","https://www.independentarabia.com/sites/default/files/thumbnails/image/2020/06/07/208186-2056759375.jpg"],
+["Call of Duty","Battle Royale","COD Points, Accounts",3600,"CP","https://vigiato.net/wp-content/uploads/2023/08/modern-warfare-3-mw2-dlc.jpg"],
+["Free Fire","Battle Royale","Diamonds, Accounts",120,"Diamonds","https://telegrafi.com/media-library/2022-02-garena-free-fire-jpg.jpg?coordinates=150%2C0%2C150%2C0&height=1500&id=57961205&width=2000"],
+["Valorant","Tactical","VP, Accounts",1200,"VP","https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/8f0df8efd5b986039cd37a4d5f3bf31b815d0c54-3840x2160.jpg"],
+["Genshin Impact","RPG & Open World","Genesis Crystals, Accounts",400,"Genesis Crystals","https://www.teyvatavern.com/cdn/shop/collections/genshin-impact-official-merch-945659.jpg?v=1739288877"],
+["GTA V Online","RPG & Open World","Accounts only",5000,"Account","https://p2.bahamut.com.tw/B/2KU/64/911515c004fa2a8d72009cee861fl845.JPG?v=1647400010929"],
+["Minecraft","Sandbox","Premium Accounts",1800,"Account","https://ethlan.fr/img/jeux/121.jpg"],
+["Roblox","Sandbox","Robux, Accounts",1400,"Robux","https://store-images.s-microsoft.com/image/apps.47252.13510798883386282.a1e5df65-8dd7-427c-9da9-506afa37b254.f4132380-deee-4518-8bbd-2a9b540046f3"],
+["Discord Nitro","Media & Utility","Subscriptions",450,"Nitro","https://img.tamindir.com/2023/11/253503/discord-nitro.jpg"],
+["Crunchyroll","Media & Utility","Premium",600,"Premium","https://i.blogs.es/2c137a/sin-titulo-2/840_560.jpeg"],
+["Marvel Rivals","Media & Utility","Units, Accounts",350,"Units","https://www.amd.com/content/dam/amd/en/images/games/marvel-rivals/3032700-marvel-rivals-screen-blk.jpg"]
+];
 const PACKAGES={
-"Fortnite":[["1,000 V-Bucks",280],["2,800 V-Bucks",720],["5,000 V-Bucks",1250],["13,500 V-Bucks",3000]],"PUBG Mobile":[["325 UC",220],["660 UC",430],["1,800 UC",1050],["3,850 UC",2100]],"Call of Duty":[["420 CP",450],["880 CP",850],["2,400 CP",2200],["5,000 CP",4200]],"Apex Legends":[["600 Coins",450],["1,000 Coins",700],["2,150 Coins",1400]],"Free Fire":[["100 Diamonds",180],["310 Diamonds",450],["520 Diamonds",720],["1,060 Diamonds",1350]],"Valorant":[["475 VP",350],["1,000 VP",700],["2,050 VP",1350],["5,350 VP",3300]],"League of Legends":[["575 RP",300],["1,380 RP",700],["2,800 RP",1350],["6,500 RP",3000]],"Clash Royale":[["500 Gems",150],["1,200 Gems",320],["2,500 Gems",650],["5,500 Gems",1300]],"Brawl Stars":[["170 Gems",180],["360 Gems",350],["950 Gems",850]],"Genshin Impact":[["60 Primogems",280],["300 + 30 Bonus",1100],["980 + 110 Bonus",2800],["1980 + 260 Bonus",5400],["3280 + 600 Bonus",8500],["6480 + 1600 Bonus",16000]],"Wuthering Waves":[["300 Astrite",300],["980 Astrite",850],["Endgame Account",1800]],"Neverness to Everness":[["Starter Pack",300],["Currency Pack",800],["Early Account",1800]],"GTA V Online":[["$1M Boost",500],["$5M Boost",1200],["$10M Boost",2200]],"Minecraft":[["Java Account",1800],["Bedrock Account",1800],["Java + Bedrock",2400]],"Roblox":[["400 Robux",200],["800 Robux",380],["1,700 Robux",760],["4,500 Robux",1900]],"Discord Nitro":[["1 Month Nitro",450],["3 Months Nitro",1200],["1 Year Nitro",4200]],"Crunchyroll":[["1 Month Premium",600],["3 Months Premium",1600],["1 Year Premium",5000]],"Marvel Rivals":[["500 Units",350],["1,000 Units",650],["Early Account",1500]]};
+"Fortnite":[["800 V-Bucks (Epic)",2400],["2,400 V-Bucks (Epic)",5500],["4,500 V-Bucks (Epic)",8500],["12,500 V-Bucks (Epic)",18500],["800 V-Bucks (Xbox)",2199],["2,400 V-Bucks (Xbox)",4599],["4,600 V-Bucks (Xbox)",5999],["12,500 V-Bucks (Xbox)",15500],["Fortnite Crew 1 Month (Epic)",1600],["Fortnite Crew 1 Month (Xbox)",1200]],
+"PUBG Mobile":[["60 UC",415],["235 UC",1633],["660 UC",3200],["1,800 UC",7700]],
+"Call of Duty":[["500 COD Points",3600],["2,400 COD Points",5200],["4,800 COD Points",9800],["9,600 COD Points",18500]],
+"Free Fire":[["70 Diamonds",120],["140 Diamonds",230],["355 Diamonds",525],["713 Diamonds",1050]],
+"Valorant":[["375 VP",1200],["475 VP",1600],["845 VP",2400],["1,000 VP",2700]],
+"Genshin Impact":[["60 Genesis Crystals",400],["330 Genesis Crystals",1400],["1,090 Genesis Crystals",3000],["2,240 Genesis Crystals",5200]],
+"GTA V Online":[],
+"Minecraft":[],
+"Roblox":[["400 Robux",1400],["800 Robux",2600],["1,700 Robux",4200]],
+"Discord Nitro":[["1 Month Nitro",450],["3 Months Nitro",1200],["1 Year Nitro",4200]],
+"Crunchyroll":[["1 Month Premium",600],["3 Months Premium",1600],["1 Year Premium",5000]],
+"Marvel Rivals":[["500 Units",350],["1,000 Units",650]]
+};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const fmt=n=>Number(n||0).toLocaleString('en-PK');
 const slug=s=>String(s||'').toLowerCase().trim().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const gameSelect=document.getElementById('gameSelect');
 function findGame(v){return GAMES.find(g=>g[0].toLowerCase()===String(v||'').toLowerCase()||slug(g[0])===slug(v));}
 GAMES.forEach(g=>{const o=document.createElement('option');o.value=g[0];o.textContent=g[0];gameSelect.appendChild(o);});
-let selected=findGame(new URLSearchParams(location.search).get('game')||new URLSearchParams(location.search).get('product'))||GAMES[0];
-try{const saved=JSON.parse(localStorage.getItem('infixoneCheckout')||'null');if(!new URLSearchParams(location.search).get('game')&&saved?.game){selected=findGame(saved.game)||selected;}}catch(e){}
+const params=new URLSearchParams(location.search);
+let selected=findGame(params.get('game')||params.get('product'))||GAMES[0];
+try{const saved=JSON.parse(localStorage.getItem('infixoneCheckout')||'null');if(!params.get('game')&&saved?.game){selected=findGame(saved.game)||selected;}}catch(e){}
 gameSelect.value=selected[0];
+const presetPack=params.get('pack')||'';
+const presetType=params.get('type')||'currency';
 let orderId='';
-function packages(g){return PACKAGES[g[0]]||[[g[2]||'Standard package',Number(g[3])||0],['Premium package',Math.round((Number(g[3])||0)*2)],['Large package',Math.round((Number(g[3])||0)*4)]];}
+function packages(g){return PACKAGES[g[0]]||[];}
 function render(){
  const g=selected, list=packages(g);
- document.getElementById('productName').textContent=g[0];document.getElementById('productMeta').textContent=(g[2]||'Digital gaming product')+' • Fast digital delivery';document.getElementById('categoryBadge').textContent=g[1]||'Gaming';
+ document.getElementById('productName').textContent=g[0];
+ document.getElementById('productMeta').textContent=(presetPack||g[2]||'Digital gaming product')+' • Currency top-up';
+ document.getElementById('categoryBadge').textContent=g[1]||'Gaming';
  orderId='INFX-'+Math.floor(100000+Math.random()*899999);document.getElementById('orderBadge').textContent=orderId;
  const img=document.getElementById('productImage');img.src=g[5];img.alt=g[0];
- const sel=document.getElementById('packageSelect');sel.innerHTML=list.map((x,i)=>`<option value="${x[1]}" ${i===0?'selected':''}>${esc(x[0])} — PKR ${fmt(x[1])}</option>`).join('');update();
+ const sel=document.getElementById('packageSelect');
+ let idx=0;
+ if(presetPack){const found=list.findIndex(x=>x[0]===presetPack);if(found>=0)idx=found;}
+ sel.innerHTML=list.map((x,i)=>`<option value="${x[1]}" ${i===idx?'selected':''}>${esc(x[0])} — PKR ${fmt(x[1])}</option>`).join('');
+ // Currency-focused: lock game when coming from select page
+ if(params.get('game')){
+   gameSelect.disabled=true;
+   const lab=gameSelect.closest('.field');
+   if(lab){const l=lab.querySelector('label');if(l)l.textContent='Game (selected)';}
+ }
+ if(presetPack){
+   // keep package selectable among currency packs, but pre-select the chosen one
+   const dt=document.getElementById('deliveryType');
+   if(dt){dt.value='Digital delivery';}
+ }
+ // If no currency packages, show message
+ if(!list.length){
+   sel.innerHTML='<option value="0">No currency packages — use Accounts instead</option>';
+ }
+ update();
 }
 function update(){const g=selected,list=packages(g),i=document.getElementById('packageSelect').selectedIndex,pack=list[i]||list[0];document.getElementById('sumProduct').textContent=g[0];document.getElementById('sumPackage').textContent=pack[0];document.getElementById('sumDelivery').textContent=document.getElementById('deliveryType').value;document.getElementById('sumTotal').textContent='PKR '+fmt(pack[1]);}
 function status(t){const e=document.getElementById('status');e.textContent=t;e.classList.add('show');}
