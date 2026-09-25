@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://infixone.store/sitemap.xml
